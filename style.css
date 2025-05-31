@@ -266,13 +266,26 @@ nav h1 {
   margin: 0 auto 80px auto;
   padding: 0 20px;
 }
-
 .projects h2 {
-  font-size: 2.4rem;
-  margin-bottom: 40px;
-  color: #00c8a6;
-  text-align: center;
+  color: #89c2d9;  /* Soft sky blue */
 }
+
+.project-card h3 {
+  color: #61a5c2;  /* Medium steel blue */
+}
+
+.project-card p {
+  color: #a7c7e7;  /* Light pastel blue */
+}
+
+.project-card a {
+  color: #4a90e2;  /* Bright cobalt blue */
+}
+
+.project-card a:hover {
+  color: #2a6496;  /* Deep navy blue */
+}
+
 
 .project-card {
   background: rgba(255, 255, 255, 0.1);
@@ -288,30 +301,7 @@ nav h1 {
   box-shadow: 0 8px 25px rgba(0, 170, 255, 0.5);
 }
 
-.project-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-  color: #5de4c7;
-}
 
-.project-card p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  color: #c7d1db;
-}
-
-.project-card a {
-  color: #00c8a6;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.project-card a:hover {
-  color: #5de4c7;
-  text-decoration: underline;
-}
 
 footer {
   text-align: center;
