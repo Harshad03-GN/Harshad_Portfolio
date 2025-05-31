@@ -243,7 +243,7 @@ nav h1 {
 .tech-stack h2 {
   font-size: 2.4rem;
   margin-bottom: 30px;
-  color: #00c8a6;
+  color: #61a5c2; 
 }
 
 .icons {
@@ -265,13 +265,19 @@ nav h1 {
   max-width: 900px;
   margin: 0 auto 80px auto;
   padding: 0 20px;
+  text-align: center;  /* added same alignment */
 }
+
 .projects h2 {
-  color: #89c2d9;  /* Soft sky blue */
+  font-size: 2.4rem;      /* same as tech-stack */
+  margin-bottom: 30px;    /* same as tech-stack */
+  color: #89c2d9;        /* keep your existing color */
 }
 
 .project-card h3 {
   color: #61a5c2;  /* Medium steel blue */
+  font-size: 1.3rem; /* increased size */
+  margin-bottom: 10px;
 }
 
 .project-card p {
@@ -279,11 +285,26 @@ nav h1 {
 }
 
 .project-card a {
-  color: #4a90e2;  /* Bright cobalt blue */
+  display: inline-block;
+  background-color: #00c8a6;  /* teal color */
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 200, 166, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 12px;
 }
 
 .project-card a:hover {
-  color: #2a6496;  /* Deep navy blue */
+  background-color: #008c74;  /* darker teal */
+  box-shadow: 0 6px 14px rgba(0, 140, 116, 0.6);
+  color: white;
 }
 
 
@@ -340,4 +361,7 @@ footer {
 }
 header nav h1,header nav ul.menu li a{
   color: #fff;
+}
+html {
+  scroll-behavior: smooth;
 }
