@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harshad | Software Engineer</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon/devicon.min.css" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Portfolio</h1>
+      <div class="theme-toggle">
+        <button id="theme-btn">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <img src="assets/harshad.jpg" alt="Harshad Profile" class="profile-img" data-aos="zoom-in" data-aos-delay="200" />
+    <h1 data-aos="fade-right" data-aos-delay="400">Hi, I'm Harshad.</h1>
+
+    <p data-aos="fade-left" data-aos-delay="600">Software Engineer | Cloud Enthusiast | DevOps</p>
+    <a href="https://github.com/Harshad03-GN/Harshad03-GN/blob/main/Resume.pdf" class="btn" data-aos="zoom-in" data-aos-delay="800" target="_blank" rel="noopener noreferrer">Download Resume</a>
+  </section>
+
+  <section class="about" data-aos="fade-up" data-aos-delay="1000">
+    <h2>About Me</h2>
+    <p>I specialize in automating cloud infrastructure with DevOps tools like Docker, GitHub Actions, Kubernetes, and Azure. I enjoy building scalable CI/CD pipelines and secure cloud-native apps.</p>
+  </section>
+
+  <section class="tech-stack" data-aos="fade-up" data-aos-delay="1200">
+    <h2>Tech Stack</h2>
+    <div class="icons">
+    <i class="devicon-python-plain colored"></i>
+     <i class="devicon-amazonwebservices-plain colored"></i> 
+
+      <i class="devicon-azure-plain colored"></i>
+      <i class="devicon-docker-plain colored"></i>
+      <i class="devicon-github-original colored"></i>
+      <i class="devicon-linux-plain colored"></i>
+      <i class="devicon-javascript-plain colored"></i>
+    </div>
+  </section>
+
+  <section class="projects" data-aos="fade-up" data-aos-delay="1400">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Image Resizer with Azure</h3>
+      <p>Python app to resize images and store them on Azure Blob Storage. Integrated with GitHub Actions for CI.</p>
+      <a href="https://github.com/Harshad03-GN/ImageResizerProject" target="_blank" rel="noopener noreferrer">View GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>CI/CD for Flask App</h3>
+      <p>Built a CI/CD pipeline using GitHub Actions, Docker, and deployed on Azure Web Apps.</p>
+      <a href="https://github.com/Harshad03-GN/flask-devops-app" target="_blank" rel="noopener noreferrer">View GitHub</a>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
