@@ -1,26 +1,54 @@
-// script.js
+// ========== Hide Header on Scroll ==========
+let lastScrollTop = 0;
+const header = document.querySelector("header");
 
-// Initialize AOS (Animate on Scroll) - already initialized in index.html inline script,
-// but you can optionally call it here too if you want:
+window.addEventListener("scroll", () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-// AOS.init({ once: true });
+  if (scrollTop > lastScrollTop) {
+    // Scrolling down
+    header.style.top = "-100px";
+  } else {
+    // Scrolling up
+    header.style.top = "0";
+  }
 
-// You can add more interactivity here if you want.
+  lastScrollTop = scrollTop;
+});
 
-// Example: Animate tech icons on hover with bounce effect (CSS handles bounce on hover)
+// ========== Mobile Menu Toggle ==========
+const menuToggle = document.getElementById("menu-toggle");
+const dropdown = document.querySelector(".dropdown");
 
-// No additional JS needed currently since animations are CSS and AOS powered.
+menuToggle.addEventListener("change", () => {
+  if (menuToggle.checked) {
+    dropdown.style.display = "flex";
+  } else {
+    dropdown.style.display = "none";
+  }
+});
 
-// If you want, you can add smooth scroll for anchor links like this:
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
+// ========== Optional: Close dropdown on link click (for better UX) ==========
+const dropdownLinks = document.querySelectorAll(".dropdown a");
+dropdownLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    menuToggle.checked = false;
+    dropdown.style.display = "none";
   });
 });
+
+// ========== Optional: Fade-in animation on scroll ==========
+const fadeElements = document.querySelectorAll(".fade-in");
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("fade-in-active");
+      observer.unobserve(entry.target); // Animate once
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+fadeElements.forEach(el => observer.observe(el));

@@ -21,12 +21,14 @@ header {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  transition: top 0.3s ease-in-out;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 nav h1 {
@@ -36,6 +38,25 @@ nav h1 {
   color: #00aaff;
 }
 
+/* Desktop Navigation */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #00aaff;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #66d9ff;
+}
+
+/* Theme toggle (optional button) */
 .theme-toggle button {
   background: transparent;
   border: none;
@@ -47,6 +68,80 @@ nav h1 {
 
 .theme-toggle button:hover {
   color: #66d9ff;
+}
+
+/* Mobile Dropdown */
+.mobile-menu {
+  display: none;
+  position: relative;
+}
+
+.menu-icon {
+  font-size: 28px;
+  color: #00aaff;
+  cursor: pointer;
+  display: block;
+  user-select: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 160px;
+  z-index: 100;
+}
+
+.dropdown a {
+  color: #f5f5f5;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.dropdown a:hover {
+  background-color: rgba(0, 170, 255, 0.2);
+}
+
+#menu-toggle:checked + .menu-icon + .dropdown {
+  display: flex;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  .icons {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .tech-stack h2 {
+    font-size: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
 .hero {
@@ -156,10 +251,8 @@ nav h1 {
   display: flex;
   justify-content: center;
   gap: 40px;
-  flex-wrap: wrap;      /* allow wrapping */
-  row-gap: 30px;        /* add some vertical spacing between lines */
+  flex-wrap: wrap;
 }
-
 
 .icons i.colored:hover {
   color: #66d9ff;
@@ -229,7 +322,7 @@ footer {
   letter-spacing: 1px;
 }
 
-/* Smooth fade-in animation */
+/* Fade Animations */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -243,7 +336,6 @@ footer {
   }
 }
 
-/* Optional: apply a subtle fade-out class */
 .fade-out {
   opacity: 1;
   animation: fadeOut 1s ease-out forwards;
@@ -253,91 +345,5 @@ footer {
   to {
     opacity: 0;
     transform: translateY(-20px);
-  }
-}
-/* Mobile Responsive Fixes */
-@media (max-width: 768px) {
-  header {
-    padding: 15px 20px;
-  }
-  nav h1 {
-    font-size: 22px;
-  }
-  .hero {
-    padding: 60px 15px 40px 15px;
-  }
-  .profile-img {
-    width: 140px;
-    height: 140px;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .btn {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-  }
-  .about, .tech-stack, .projects {
-    max-width: 100%;
-    padding: 0 15px;
-  }
-  .tech-stack h2, .about h2, .projects h2 {
-    font-size: 2rem;
-  }
-  .icons {
-    font-size: 48px;
-    gap: 25px;
-  }
-  .project-card {
-    padding: 15px 20px;
-  }
-  .project-card h3 {
-    font-size: 1.3rem;
-  }
-  .project-card p {
-    font-size: 0.95rem;
-  }
-  footer {
-    font-size: 0.9rem;
-    padding: 15px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  nav h1 {
-    font-size: 18px;
-  }
-  .profile-img {
-    width: 110px;
-    height: 110px;
-  }
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-  .btn {
-    padding: 8px 20px;
-    font-size: 0.85rem;
-  }
-  .tech-stack h2, .about h2, .projects h2 {
-    font-size: 1.6rem;
-  }
-  .icons {
-    font-size: 36px;
-    gap: 18px;
-  }
-  .project-card {
-    padding: 12px 15px;
-  }
-  .project-card h3 {
-    font-size: 1.1rem;
-  }
-  .project-card p {
-    font-size: 0.85rem;
   }
 }
